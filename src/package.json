@@ -1,0 +1,19 @@
+{
+    "name": "chipojos",
+    "version": "0.0.1",
+    "description" : "it's not a wiki, its a workbench",
+    "homepage" : "https://chipojos.com",
+    "repository" : { "type" : "git", "url" : "https://github.com/limadelic/chipojos.git" },
+    "keywords" : ["testing", "atdd", "bdd"],
+    "author" : "limadelic <limadelic@gmail.com>",
+    "contributors" : [
+        "Isel Fernandez <isel_77@hotmail.com>",
+        "Jeff Kwak <jeff.kwak@gmail.com>",
+        "JP Erkelens <jperkelens@gmail.com>",
+        "Mike Suarez <mikemps@gmail.com>"
+    ],
+    "licenses" : ["MIT"],
+    "dependencies": {
+        "zappa": "latest"
+    }
+}
