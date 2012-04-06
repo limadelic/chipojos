@@ -1,1 +1,1 @@
-web: coffee server
+web: node node_modules/coffee-script/bin/coffee bin/chipojos
