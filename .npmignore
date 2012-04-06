@@ -1,5 +1,2 @@
-/.idea
-/node_modules
-/slim
-/doc
-/spec
+src/.idea
+src/node_modules
