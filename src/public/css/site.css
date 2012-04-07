@@ -10,6 +10,10 @@ body {
     background-color: #80d1fa;
     -webkit-box-shadow: #000303, 5px;
     -webkit-border-radius: 15px;
+    background-image: url("../img/main-bk.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .logo-header {
