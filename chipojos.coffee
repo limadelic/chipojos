@@ -1,1 +1,1 @@
-require './src/server.coffee'
+require './src/server'

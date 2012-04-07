@@ -1,7 +1,6 @@
 div class:'row', ->
 
-  div class:'span6', ->
-    img src:'img/chipojo.png', alt:'Chipojo'
+  img src:'img/logo-body.png', alt:'Chipojo'
 
   div class:'span5 offset1', ->
 

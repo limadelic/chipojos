@@ -9,13 +9,8 @@ html lang:'en', ->
     meta name:'author', content:'limadelic'
 
     link href:'css/bootstrap.css', rel:'stylesheet'
-    style type:'text/css', -> '''
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    '''
     link href:'css/bootstrap-responsive.css', rel:'stylesheet'
+    link href:'css/site.css', rel:'stylesheet'
 
     link rel:'shortcut icon', href:'ico/favicon.ico'
     link rel:'apple-touch-icon-precomposed', sizes:'114x114', href:'ico/apple-touch-icon-114-precomposed.png'
@@ -31,20 +26,18 @@ html lang:'en', ->
             span class:'icon-bar'
             span class:'icon-bar'
             span class:'icon-bar'
-          a class:'brand', href:'#', -> 'Chipojos'
           div class:'nav-collapse', ->
+
             ul class:'nav', ->
-              li class:'active', -> 
-                a href:'#', -> 'Home'
-              li ->
-                a href:'about', -> 'About'
-              li ->
-                a href:'#contact', -> 'Contact'
+              li class:'logo-header', -> img src:'img/logo-header.png'
+              li class:'active', -> a href:'#', -> 'Home'
+              li -> a href:'about', -> 'About'
+              li -> a href:'#contact', -> 'Contact'
 
-    div class:'container', ->
+            img class:'chipojo', src:'img/chipojo.png'
+
+    div class:'container container-main', ->
       @body
-
-    hr()
 
     footer ->
       p -> '&copy; Limadelic 2012'

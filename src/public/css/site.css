@@ -1,2 +1,31 @@
 /* site.css */
 
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.container-main {
+    margin-top: 72px;
+    background-color: #80d1fa;
+    -webkit-box-shadow: #000303, 5px;
+    -webkit-border-radius: 15px;
+}
+
+.logo-header {
+    margin: 10px 280px 0 0;
+}
+
+li {
+    margin-top: 36px;
+}
+
+.navbar .nav {
+    margin-top: 72px;
+}
+
+.chipojo {
+    float: right;
+    margin-top: 15px;
+}
+
