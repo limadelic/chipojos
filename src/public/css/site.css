@@ -1,19 +1,23 @@
 /* site.css */
 
 body {
-    padding-top: 60px;
+    padding-top: 159px;
     padding-bottom: 40px;
 }
 
 .container-main {
-    margin-top: 72px;
+    height: 600px;
     background-color: #80d1fa;
     -webkit-box-shadow: #000303, 5px;
     -webkit-border-radius: 15px;
 }
 
 .logo-header {
-    margin: 10px 280px 0 0;
+    margin: 10px 200px 0 10px;
+}
+
+.logo-body {
+    margin: 0 0 0 10px;
 }
 
 li {
@@ -26,6 +30,6 @@ li {
 
 .chipojo {
     float: right;
-    margin-top: 15px;
+    margin: 15px 10px 0 0;
 }
 
