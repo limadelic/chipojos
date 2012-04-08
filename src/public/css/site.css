@@ -37,3 +37,20 @@ li {
     margin: 15px 10px 0 0;
 }
 
+.uvp {
+    padding: 40px 40px 100px 60px;
+    width: 55%;
+    margin: 100px 0 0 220px;
+    background-color: transparent;
+    border: #396244 3px dashed;
+    -webkit-border-radius: 100px;
+}
+
+.uvp h1 {
+    font-size: 40px;
+    margin: 10px;
+}
+
+.uvp .btn {
+    margin: 25px 50px 0 0;
+}
