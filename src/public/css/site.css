@@ -1,17 +1,22 @@
 /* site.css */
 
 body {
-    padding-top: 159px;
+    padding-top: 88px;
     padding-bottom: 40px;
+}
+
+.landing-header {
+    background-image: url("../img/chipojo1.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 12%;
 }
 
 .container-main {
     height: 600px;
-    background-color: #80d1fa;
-    -webkit-box-shadow: #000303, 5px;
     -webkit-border-radius: 15px;
-    background-image: url("../img/main-bk.png");
-    background-position: bottom;
+    background-image: url("../img/main-bk1.png");
+    background-position: bottom left;
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -42,7 +47,8 @@ li {
     width: 55%;
     margin: 100px 0 0 220px;
     background-color: transparent;
-    border: #396244 3px dashed;
+    border: 3px dashed;
+    -webkit-box-shadow: none;
     -webkit-border-radius: 100px;
 }
 

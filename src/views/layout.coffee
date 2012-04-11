@@ -26,17 +26,10 @@ html lang:'en', ->
             span class:'icon-bar'
             span class:'icon-bar'
             span class:'icon-bar'
-          div class:'nav-collapse', ->
+          div class:'nav-collapse landing-header', ->
+            img class:'logo-header', src:'img/logo-header.png'
 
-            ul class:'nav', ->
-              li class:'logo-header', -> img src:'img/logo-header.png'
-              li class:'active', -> a href:'#', -> 'Home'
-              li -> a href:'about', -> 'About'
-              li -> a href:'#contact', -> 'Contact'
-
-            img class:'chipojo', src:'img/chipojo.png'
-
-    div class:'container container-main', ->
+    div class:'btn-primary container container-main', ->
       @body
 
     footer ->
