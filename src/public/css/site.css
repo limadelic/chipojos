@@ -29,10 +29,6 @@ body {
     margin: 0 0 0 10px;
 }
 
-li {
-    margin-top: 36px;
-}
-
 .navbar .nav {
     margin-top: 72px;
 }
@@ -59,4 +55,9 @@ li {
 
 .uvp .btn {
     margin: 25px 50px 0 0;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 20px;
 }
