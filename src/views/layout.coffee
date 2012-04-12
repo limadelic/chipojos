@@ -33,7 +33,7 @@ html lang:'en', ->
       @body
 
     footer ->
-      p -> '&copy; Limadelic 2012'
+      p class:'container', -> '&copy; limadelic 2012'
 
     script src:'//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', type:'text/javascript'
     script src:'js/bootstrap.js'
