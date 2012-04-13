@@ -7,6 +7,7 @@ zappa = require('zappa').app ->
   @use 'static'
 
   @get "/": -> @render 'home'
+  @get "/test": -> @render 'test'
 
 
 zappa.app.listen process.env.PORT || 3000

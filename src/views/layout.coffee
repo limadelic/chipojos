@@ -30,6 +30,7 @@ html lang:'en', ->
             img class:'logo-header', src:'img/logo-header.png'
 
     div class:'btn-primary container container-main', ->
+      div class:'logo-body', -> img src:'img/logo-body.png', alt:'Chipojo'
       @body
 
     footer ->
