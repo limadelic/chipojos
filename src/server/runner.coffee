@@ -1,5 +1,3 @@
-_ = require 'underscore'
-
 class exports.Runner
 
   run: (steps, @fixtures) ->
