@@ -2,8 +2,9 @@ _ = require 'underscore'
 
 class exports.Parser
 
-  parse: (test) ->
-    @steps _.compact test.split '\n'
+  parse: (test) -> @steps @tokenize test
+
+  tokenize: (test) -> _.compact test.split '\n'
 
   steps: (steps) -> for step in steps
     text: step
