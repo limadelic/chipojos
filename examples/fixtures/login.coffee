@@ -7,3 +7,7 @@ class exports.Login
   'when $x logs in': (user) -> true
 
   'it should say $x': (msg) -> true
+
+  'when (.*) logs in': -> true
+
+  'it should greet (she|he)': -> true

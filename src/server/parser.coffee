@@ -11,5 +11,5 @@ class exports.Parser
     name: @name step
     args: @args step
 
-  name: (step) -> step.replace /'[^']*'/g, '$x'
+  name: (step) -> step.replace /'(.*?)'/g, '$x'
   args: (step) -> arg for arg in step.split("'")[1..] by 2
