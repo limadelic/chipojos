@@ -5,13 +5,9 @@
 
 root = exports ? @
 
-fixtures = [
-  new Login()
-]
-
 root.run = (test, done) ->
   steps = new Parser().parse test
-  results = new Runner().run steps, fixtures
+  results = new Runner().run steps, new Login()
   console.log results
   done()
 #  verify_all_passed results, done
