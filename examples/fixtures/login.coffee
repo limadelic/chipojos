@@ -10,4 +10,4 @@ class exports.Login
 
   'when (.*) logs in': -> true
 
-  'it should greet (she|he)': -> true
+  'it should greet (her|him)': -> true

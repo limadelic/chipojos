@@ -7,10 +7,11 @@ root = exports ? @
 
 root.run = (test, done) ->
   steps = new Parser().parse test
-  results = new Runner().run steps, new Login()
-  console.log results
-  done()
-#  verify_all_passed results, done
+  sut = new Login()
+  results = new Runner().run(steps, sut)
+#  console.log results
+#  done()
+  verify_all_passed results, done
 
 verify_all_passed = (results, done) ->
   for { result } in results
