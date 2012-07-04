@@ -2,19 +2,14 @@ class exports.Runner
 
   run: (steps, @sut) -> for step in steps
     step: step.text
-    result: @run_step step
+    result: @execute @method step
 
-  run_step: (@step) ->
-    if @is_literal()
-    then @literal()
-    else @regex()
+  method: (@step) -> @literal() || @regex()
 
-  is_literal: -> @sut[@step.name]?
+  literal: -> @step.name if @sut[@step.name]?
 
-  literal: -> @sut[@step.name] @step.args
+  regex: -> return method for method of @sut when @step.name.match method
 
-  regex: ->
-    for method of @sut when @step.name.match method
-      return @sut[method] @step.args
+  execute: (method) -> @sut[method].apply method, @step.args
 
 
