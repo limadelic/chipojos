@@ -2,14 +2,28 @@ _ = require 'underscore'
 
 class exports.Parser
 
-  parse: (test) -> @steps @tokenize test
+  constructor: ->
+    @funcs = {}
+    @steps = []
+
+  parse: (test) ->
+    @parse_lines @tokenize test
+    @steps
 
   tokenize: (test) -> _.compact test.split '\n'
 
-  steps: (steps) -> for step in steps
-    text: step
-    name: @name step
-    args: @args step
+  parse_lines: (steps) -> @parse_line step for step in steps
 
-  name: (step) -> step.replace /'(.*?)'/g, '$x'
-  args: (step) -> arg for arg in step.split("'")[1..] by 2
+  parse_line: (@line) ->
+#    @parse_func_declaration() ||
+#    @parse_func_body() ||
+#    @parse_func_call() ||
+    @parse_step()
+
+  parse_step: -> @steps.push
+    text: @line
+    name: @name()
+    args: @args()
+
+  name: -> @line.replace /'(.*?)'/g, '$x'
+  args: -> arg for arg in @line.split("'")[1..] by 2

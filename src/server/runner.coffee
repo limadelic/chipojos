@@ -4,7 +4,7 @@ class exports.Runner
     step: step.text
     result: @execute @method(step.name), step.args
 
-  method: (@step) -> @literal() || @regex()
+  method: (@step) -> @literal() ? @regex()
 
   literal: -> @step if @sut[@step]?
 
