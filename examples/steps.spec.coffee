@@ -13,7 +13,7 @@ describe 'Sentences', ->
 
     run '''
 
-      when a user logs in
+      when an user logs in
       it should be greeted
 
     '''
