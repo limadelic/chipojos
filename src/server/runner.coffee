@@ -10,6 +10,6 @@ class exports.Runner
 
   regex: -> return method for method of @sut when @step.match method
 
-  execute: (method, args) -> @sut[method].apply method, args
+  execute: (method, args) -> @sut[method].apply method, args if method?
 
 
