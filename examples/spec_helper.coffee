@@ -1,5 +1,5 @@
 #require './spec_helper'
-{ Parser } = require '../src/server/parser'
+{ Parser } = require '../src/server/parsers/parser'
 { Runner } = require '../src/server/runner'
 { Login } = require './fixtures/login'
 
