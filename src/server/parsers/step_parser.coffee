@@ -1,3 +1,5 @@
+_ = require 'underscore'
+
 class exports.StepParser
 
   constructor: (@steps) ->
@@ -7,5 +9,10 @@ class exports.StepParser
     name: @name()
     args: @args()
 
-  name: -> @line.replace /'(.*?)'/g, '$x'
-  args: -> arg for arg in @line.split("'")[1..] by 2
+  args_matcher = /'(.*?)'/g
+
+  name: -> @line.replace args_matcher, '$x'
+
+  args: -> @cleanup_args @line.match args_matcher
+
+  cleanup_args: (args) -> _.map args, (arg) -> arg[1..-2]
