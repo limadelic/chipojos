@@ -1,18 +1,11 @@
-_ = require 'underscore'
+{ StepArgsParser } = require './args_parser'
 
 class exports.StepParser
 
   constructor: (@steps) ->
+    @args = new StepArgsParser()
 
-  parse: (@line) -> @steps.push
-    text: @line
-    name: @name()
-    args: @args()
-
-  args_matcher = /'(.*?)'/g
-
-  name: -> @line.replace args_matcher, '$x'
-
-  args: -> @cleanup_args @line.match args_matcher
-
-  cleanup_args: (args) -> _.map args, (arg) -> arg[1..-2]
+  parse: (line) -> @steps.push
+    text: line
+    name: @args.normalized line
+    args: @args.parse line
