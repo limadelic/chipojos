@@ -9,7 +9,7 @@ root.run = (test, done) ->
   steps = new Parser().parse test
   sut = new Login()
   results = new Runner().run(steps, sut)
-#  console.log results
+  console.log results
 #  done()
   verify_all_passed results, done
 
