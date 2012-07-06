@@ -7,7 +7,7 @@ class exports.Parser
   constructor: ->
     @results = []
     @steps = new StepParser @results
-    @funcs = new FuncParser @results
+    @funcs = new FuncParser @steps
 
   parse: (test) ->
     @parse_lines @tokenize test

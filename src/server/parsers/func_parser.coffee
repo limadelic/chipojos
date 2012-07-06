@@ -2,7 +2,7 @@
 
 class exports.FuncParser
 
-  constructor: (@steps) ->
+  constructor: (@step_parser) ->
     @funcs = {}
     @step_args = new StepArgsParser()
     @func_args = new FuncArgsParser()
@@ -25,9 +25,7 @@ class exports.FuncParser
     args_names: @func_args.parse @line[..-2]
     steps: []
 
-  add_step: -> @func.steps.push
-    text: @line[2..]
-    name: @line[2..]
+  add_step: -> @func.steps.push @line[2..]
 
   close: -> if @func?
     @funcs[@func.name] = @func
@@ -35,8 +33,8 @@ class exports.FuncParser
 
   called: ->
     name = @step_args.normalized @line
-    @called_func = @funcs[@line]
+    @called_func = @funcs[name]
     @called_func?.args_values = @step_args.parse @line
 
   inline: -> for step in @called_func.steps
-    @steps.push @func_args.inline step, @called_func
+    @step_parser.parse @func_args.inline step, @called_func
