@@ -1,6 +1,6 @@
 describe 'Args', ->
 
-  it 'says hello to jimmy', (done) ->
+  it 'simple func', (done) ->
 
     run '''
 
