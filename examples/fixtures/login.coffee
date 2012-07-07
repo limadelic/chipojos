@@ -4,9 +4,9 @@ class exports.Login
 
   'it should be greeted': -> true
 
-  'when $x logs in': (user) -> true
+  'when @x logs in': (user) -> true
 
-  'it should say $x': (msg) -> true
+  'it should say @x': (msg) -> true
 
   'when (.*) logs in': -> true
 

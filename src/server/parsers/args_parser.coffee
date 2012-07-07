@@ -4,7 +4,7 @@ class exports.StepArgsParser
 
   args_matcher = /'(.*?)'/g
 
-  normalized: (line) -> line.replace args_matcher, '$x'
+  normalized: (line) -> line.replace args_matcher, '@x'
 
   parse: (line) -> @cleanup line.match args_matcher
 
@@ -12,16 +12,14 @@ class exports.StepArgsParser
 
 class exports.FuncArgsParser
 
-  args_matcher = /(\$\S+)/g
+  args_matcher = /(@\S+)/g
 
-  normalized: (func) -> func.replace args_matcher, '$x'
+  normalized: (func) -> func.replace args_matcher, '@x'
 
   parse: (func) -> func.match args_matcher
 
   inline: (step, func) ->
     return step unless func.args_names?
     for arg, i in func.args_names
-      step = @inline_arg step, arg, func.args_values[i]
+      step = step.replace ///#{arg}///g, func.args_values[i]
     step
-
-  inline_arg: (step, arg, value) -> step.replace ///\$#{arg[1..]}///g, value

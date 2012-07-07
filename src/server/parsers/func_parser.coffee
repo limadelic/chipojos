@@ -33,8 +33,12 @@ class exports.FuncParser
 
   called: ->
     name = @step_args.normalized @line
-    @called_func = @funcs[name]
+    @called_func = @literal(name) ? @regex(name)
     @called_func?.args_values = @step_args.parse @line
+
+  literal: (name) -> @funcs[name]
+
+  regex: (name) -> return @funcs[func] for func of @funcs when name.match func
 
   inline: -> for step in @called_func.steps
     @step_parser.parse @func_args.inline step, @called_func

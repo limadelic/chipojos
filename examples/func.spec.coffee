@@ -17,11 +17,11 @@ describe 'Args', ->
 
     run '''
 
-      verify it shows $msg when $user logs in:
-        when '$user' logs in
-        it should say '$msg'
+      verify that it shows @msg when @user logs in:
+        when '@user' logs in
+        it should say '@msg'
 
-      verify it shows 'hello lizard king' when 'Jim' logs in
+      verify that it shows 'hello lizard king' when 'Jim' logs in
 
     '''
     , done
@@ -30,12 +30,12 @@ describe 'Args', ->
 
     run '''
 
-      verify that if $user logs in, (she|he)'s greeted:
-        when '$user' logs in
+      verify that when @user logs in, (she|he) is greeted:
+        when '@user' logs in
         it should be greeted
 
-      verify that if 'Pam' logs in, she's greeted
-      verify that if 'Jim' logs in, he's greeted
+      verify that when 'Pam' logs in, she is greeted
+      verify that when 'Jim' logs in, he is greeted
 
     '''
     , done
