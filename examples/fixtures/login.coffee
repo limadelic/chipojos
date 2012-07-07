@@ -8,6 +8,6 @@ class exports.Login
 
   'it should say @x': (msg) -> true
 
-  'when (.*) logs in': -> true
+  'when .* logs in': -> true
 
   'it should greet (her|him)': -> true

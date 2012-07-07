@@ -7,7 +7,7 @@ describe 'Args', ->
       when she logs in
       it should greet her
 
-      when he logs in
+      when 'Jim' logs in
       it should greet him
 
     '''
