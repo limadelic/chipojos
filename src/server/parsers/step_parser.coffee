@@ -3,7 +3,7 @@
 class exports.StepParser
 
   constructor: (@steps) ->
-    @args = new StepArgsParser()
+    @args = new StepArgsParser
 
   parse: (line) -> @steps.push
     text: line

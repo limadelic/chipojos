@@ -21,5 +21,7 @@ class exports.FuncArgsParser
   inline: (step, func) ->
     return step unless func.args_names?
     for arg, i in func.args_names
-      step = step.replace ///\$#{arg[1..]}///g, func.args_values[i]
+      step = @inline_arg step, arg, func.args_values[i]
     step
+
+  inline_arg: (step, arg, value) -> step.replace ///\$#{arg[1..]}///g, value

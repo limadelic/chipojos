@@ -4,8 +4,8 @@ class exports.FuncParser
 
   constructor: (@step_parser) ->
     @funcs = {}
-    @step_args = new StepArgsParser()
-    @func_args = new FuncArgsParser()
+    @step_args = new StepArgsParser
+    @func_args = new FuncArgsParser
 
   parse: (@line) ->
     @parse_body() ?

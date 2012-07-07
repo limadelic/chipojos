@@ -7,7 +7,7 @@ root = exports ? @
 
 root.run = (test, done) ->
   steps = new Parser().parse test
-  sut = new Login()
+  sut = new Login
   results = new Runner().run(steps, sut)
 #  console.log results
 #  done()
