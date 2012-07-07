@@ -25,3 +25,17 @@ describe 'Args', ->
 
     '''
     , done
+
+  it 'func with regex', (done) ->
+
+    run '''
+
+      verify that if $user logs in, (she|he)'s greeted:
+        when '$user' logs in
+        it should be greeted
+
+      verify that if 'Pam' logs in, she's greeted
+      verify that if 'Jim' logs in, he's greeted
+
+    '''
+    , done
