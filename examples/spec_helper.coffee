@@ -5,15 +5,16 @@
 
 root = exports ? @
 
-root.run = (test, done) ->
+root.run = (test) ->
   steps = new Parser().parse test
   sut = new Login
-  results = new Runner().run(steps, sut)
-#  console.log results
-#  done()
-  verify_all_passed results, done
+  new Runner().run(steps, sut)
 
-verify_all_passed = (results, done) ->
-  for { result } in results
-    expect(result).toEqual true
-  done()
+root.should = require 'should'
+
+verify_all_passed = (results) ->
+  expect(passed).toEqual true for { passed } in results
+
+
+root.test = (test) ->
+  verify_all_passed run test

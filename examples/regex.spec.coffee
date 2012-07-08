@@ -1,14 +1,11 @@
 describe 'Args', ->
 
-  it 'says hello to jimmy', (done) ->
+  it 'says hello to jimmy', -> test '''
 
-    run '''
+    when she logs in
+    it should greet her
 
-      when she logs in
-      it should greet her
+    when 'Jim' logs in
+    it should greet him
 
-      when 'Jim' logs in
-      it should greet him
-
-    '''
-    , done
+  '''

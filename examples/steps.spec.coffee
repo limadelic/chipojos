@@ -1,23 +1,18 @@
-###
-
-Sentences are the simplest form for text -> code matching
-There are many strategies depending on the target language
-also affected by language styles (camel-case/snake-case, etc)
-Regexes are a particular case
-
-###
-
 describe 'Sentences', ->
 
-  it 'says hello', (done) ->
+  it 'says hello', -> test '''
 
-    run '''
+    when an user logs in
+    it should be greeted
 
-      when an user logs in
-      it should be greeted
+  '''
 
-    '''
-    , done
+#  it "it doesn't say wuzup" , -> test '''
+#
+#    when 'Jim' logs in
+#    it should say 'wuzup'
+#
+#  '''
 
 
 

@@ -1,41 +1,32 @@
 describe 'Args', ->
 
-  it 'simple func', (done) ->
+  it 'simple func', -> test '''
 
-    run '''
+    verify login:
+      when an user logs in
+      it should be greeted
 
-      verify login:
-        when an user logs in
-        it should be greeted
+    verify login
 
-      verify login
+  '''
 
-    '''
-    , done
+  it 'func with args', -> test '''
 
-  it 'func with args', (done) ->
+    verify that it shows @msg when @user logs in:
+      when '@user' logs in
+      it should say '@msg'
 
-    run '''
+    verify that it shows 'Hello lizard king' when 'Jim' logs in
 
-      verify that it shows @msg when @user logs in:
-        when '@user' logs in
-        it should say '@msg'
+  '''
 
-      verify that it shows 'Hello lizard king' when 'Jim' logs in
+  it 'func with regex', -> test '''
 
-    '''
-    , done
+    verify that when @user logs in, (she|he) is greeted:
+      when '@user' logs in
+      it should be greeted
 
-  it 'func with regex', (done) ->
+    verify that when 'Pam' logs in, she is greeted
+    verify that when 'Jim' logs in, he is greeted
 
-    run '''
-
-      verify that when @user logs in, (she|he) is greeted:
-        when '@user' logs in
-        it should be greeted
-
-      verify that when 'Pam' logs in, she is greeted
-      verify that when 'Jim' logs in, he is greeted
-
-    '''
-    , done
+  '''
