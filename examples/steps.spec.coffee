@@ -7,12 +7,15 @@ describe 'Sentences', ->
 
   '''
 
-#  it "it doesn't say wuzup" , -> test '''
-#
-#    when 'Jim' logs in
-#    it should say 'wuzup'
-#
-#  '''
+  it "doesn't say wuzup" , ->
 
+    failure = run('''
 
+      when 'Jim' logs in
+      it should say 'wuzup'
 
+    ''')[1]
+
+    expect(failure.passed).toBeFalsy()
+    expect(failure.message)
+      .toEqual "expected 'wuzup' to equal 'Hello lizard king'"

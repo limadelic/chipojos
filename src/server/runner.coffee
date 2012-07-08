@@ -3,7 +3,7 @@ class @Runner
   run: (steps, @sut) -> for step in steps
     step: step.text
     passed: @execute @method(step.name), step.args
-    msg: @msg
+    message: @message
 
   method: (@step) -> @literal() ? @regex()
 
@@ -12,11 +12,11 @@ class @Runner
   regex: -> return method for method of @sut when @step.match method
 
   execute: (method, args) ->
-    @msg = undefined
+    @message = undefined
     return undefined unless method?
     try
       @sut[method].apply @sut, args
       true
     catch e
-      @msg = e.message
+      @message = e.message
       false
