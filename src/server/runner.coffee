@@ -1,4 +1,4 @@
-class exports.Runner
+class @Runner
 
   run: (steps, @sut) -> for step in steps
     step: step.text
@@ -10,6 +10,13 @@ class exports.Runner
 
   regex: -> return method for method of @sut when @step.match method
 
-  execute: (method, args) -> @sut[method].apply method, args if method?
+  execute: (method, args) ->
+    return undefined unless method?
+    try
+      @sut[method].apply @sut, args
+      true
+    catch e
+      false
+
 
 

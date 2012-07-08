@@ -5,7 +5,7 @@ describe 'Args', ->
     run '''
 
       when 'Jim' logs in
-      it should say 'hello lizard king'
+      it should say 'Hello lizard king'
 
     '''
     , done

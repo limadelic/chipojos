@@ -1,13 +1,18 @@
-class exports.Login
+users_msg =
+  Jim: 'Hello lizard king'
+  Pam: 'Hello turkey murderer'
+  default: 'Hello world'
 
-  'when an user logs in': -> true
+class @Login
 
-  'it should be greeted': -> true
+  'when an user logs in': -> @msg = users_msg.default
 
-  'when @x logs in': (user) -> true
+  'it should be greeted': -> expect(@msg).not.toBeNull()
 
-  'it should say @x': (msg) -> true
+  'when @x logs in': (user) -> @msg = users_msg[user]
 
-  'when .* logs in': -> true
+  'it should say @x': (msg) -> expect(msg).toEqual @msg
 
-  'it should greet (her|him)': -> true
+  'when .* logs in': -> @['when an user logs in']()
+
+  'it should greet (her|him)': -> @['it should be greeted']()

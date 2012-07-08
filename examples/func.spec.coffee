@@ -21,7 +21,7 @@ describe 'Args', ->
         when '@user' logs in
         it should say '@msg'
 
-      verify that it shows 'hello lizard king' when 'Jim' logs in
+      verify that it shows 'Hello lizard king' when 'Jim' logs in
 
     '''
     , done

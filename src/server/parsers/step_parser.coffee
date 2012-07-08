@@ -1,6 +1,6 @@
 { StepArgsParser } = require './args_parser'
 
-class exports.StepParser
+class @StepParser
 
   constructor: (@steps) ->
     @args = new StepArgsParser

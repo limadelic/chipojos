@@ -1,6 +1,6 @@
 _ = require 'underscore'
 
-class exports.StepArgsParser
+class @StepArgsParser
 
   args_matcher = /'(.*?)'/g
 
@@ -10,7 +10,7 @@ class exports.StepArgsParser
 
   cleanup: (args) -> _.map args, (arg) -> arg[1..-2]
 
-class exports.FuncArgsParser
+class @FuncArgsParser
 
   args_matcher = /(@\S+)/g
 

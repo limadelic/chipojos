@@ -1,6 +1,6 @@
 { StepArgsParser, FuncArgsParser } = require './args_parser'
 
-class exports.FuncParser
+class @FuncParser
 
   constructor: (@step_parser) ->
     @funcs = {}
