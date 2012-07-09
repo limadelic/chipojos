@@ -1,14 +1,14 @@
 class @Result
 
   passed: (step)  ->
-    step: step.text
+    step: step.title
     passed: true
 
   failed: (step, e) ->
-    step: step.text
+    step: step.title
     passed: false
     message: e.message
 
   missing: (step) ->
-    step: step.text
+    step: step.title
     passed: undefined

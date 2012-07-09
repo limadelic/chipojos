@@ -8,13 +8,12 @@ root = exports ? @
 root.run = (test) ->
   steps = new Parser().parse test
   sut = new Login
-  new Runner().run(steps, sut)
+  new Runner().run_steps sut, steps
 
 root.should = require 'should'
 
 verify_all_passed = (results) ->
   expect(passed).toEqual true for { passed } in results
-
 
 root.test = (test) ->
   verify_all_passed run test

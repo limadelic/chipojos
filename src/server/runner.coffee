@@ -7,9 +7,9 @@ class @Runner
     @method = new MethodMatcher
     @result = new Result
 
-  run: (steps, @sut) -> @execute step for step in steps
+  run_steps: (@sut, steps) -> @run_step step for step in steps
 
-  execute: (step) ->
+  run_step: (step) ->
 
     method = @method.match @sut, step.name
     return @result.missing step unless method?

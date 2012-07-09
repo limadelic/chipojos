@@ -6,6 +6,6 @@ class @StepParser
     @args = new StepArgsParser
 
   parse: (line) -> @steps.push
-    text: line
+    title: line
     name: @args.normalized line
     args: @args.parse line
