@@ -1,22 +1,21 @@
+{ MethodMatcher } = require './method_matcher'
+{ Result } = require './result'
+
 class @Runner
 
-  run: (steps, @sut) -> for step in steps
-    step: step.text
-    passed: @execute @method(step.name), step.args
-    message: @message
+  constructor: ->
+    @method = new MethodMatcher
+    @result = new Result
 
-  method: (@step) -> @literal() ? @regex()
+  run: (steps, @sut) -> @execute step for step in steps
 
-  literal: -> @step if @sut[@step]?
+  execute: (step) ->
 
-  regex: -> return method for method of @sut when @step.match method
+    method = @method.match @sut, step.name
+    return @result.missing step unless method?
 
-  execute: (method, args) ->
-    @message = undefined
-    return undefined unless method?
     try
-      @sut[method].apply @sut, args
-      true
+      @sut[method].apply @sut, step.args
+      @result.passed step
     catch e
-      @message = e.message
-      false
+      @result.failed step, e
