@@ -16,4 +16,4 @@ verify_all_passed = (results) ->
   expect(passed).toEqual true for { passed } in results
 
 root.test = (test) ->
-  run test, verify_all_passed
+  verify_all_passed run test

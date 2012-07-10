@@ -2,6 +2,6 @@ class @MethodMatcher
 
   match: (@sut, @step) -> @literal() ? @regex()
 
-  literal: -> @step if @sut[@step]?
+  literal: -> @sut[@step] if @sut[@step]?
 
-  regex: -> return method for method of @sut when @step.match method
+  regex: -> return @sut[method] for method of @sut when @step.match method

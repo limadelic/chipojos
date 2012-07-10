@@ -1,27 +1,34 @@
-async = require 'async'
-
+Sync = require 'sync'
 { MethodMatcher } = require './method_matcher'
 { Result } = require './result'
 
 class @Runner
 
   constructor: ->
-    @method = new MethodMatcher
+    @method_matcher = new MethodMatcher
     @result = new Result
-    @queue = async.queue @run_step, 1
 
-  run_steps: (@sut, steps) -> @queue.push step for step in steps
+  run_steps: (@sut, steps) -> @run_step step for step in steps
 
-  run_step: (step, done) =>
-    console.log 1
+  run_step: (@step) =>
 
-    method = @method.match @sut, step.name
-    return @result.missing step unless method?
+    return @result.missing @step unless @step_implemented()?
 
     try
-      @sut[method].apply @sut, step.args
-      @result.passed step
-      done()
+      if @is_async_step() then @async_call() else @sync_call()
+      @result.passed @step
     catch e
-      @result.failed step, e
-      done()
+      @result.failed @step, e
+
+  step_implemented: -> @method = @method_matcher.match @sut, @step.name
+
+  is_async_step: -> @method.length is @step.args.length + 1
+
+  sync_call: -> @method.apply @sut, @step.args
+
+  async_call: ->
+
+    async_wrap = (done) => @method.apply @sut, @step.args.concat [done]
+
+    Sync -> async_wrap.sync null
+

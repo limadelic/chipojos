@@ -15,4 +15,8 @@ class @Login
 
   'when .* logs in': -> @['when an user logs in']()
 
-  'it should greet (her|him)': -> @['it should be greeted']()
+  'it should greet (her|him)': (done) ->
+    process.nextTick =>
+      @['it should be greeted']()
+      false.should.be.true
+      done()
