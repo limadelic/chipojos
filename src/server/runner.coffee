@@ -1,4 +1,5 @@
-Sync = require 'sync'
+fibrous = require 'fibrous'
+Fiber = require 'fibers'
 { MethodMatcher } = require './method_matcher'
 { Result } = require './result'
 
@@ -10,25 +11,23 @@ class @Runner
 
   run_steps: (@sut, steps) -> @run_step step for step in steps
 
-  run_step: (@step) =>
+  run_step: (@step) ->
 
-    return @result.missing @step unless @step_implemented()?
+    return @result.missing @step unless @is_implemented()?
 
     try
-      if @is_async_step() then @async_call() else @sync_call()
+      if @is_async() then @async_call() else @sync_call()
       @result.passed @step
     catch e
       @result.failed @step, e
 
-  step_implemented: -> @method = @method_matcher.match @sut, @step.name
+  is_implemented: -> @method = @method_matcher.match @sut, @step.name
 
-  is_async_step: -> @method.length is @step.args.length + 1
+  is_async: -> @method.length is @step.args.length + 1
 
   sync_call: -> @method.apply @sut, @step.args
 
-  async_call: ->
-
-    async_wrap = (done) => @method.apply @sut, @step.args.concat [done]
-
-    Sync -> async_wrap.sync null
+  async_call: fibrous ->
+      async_wrap = (done) => @method.apply @sut, @step.args.concat [done]
+      sync.async_wrap ->
 

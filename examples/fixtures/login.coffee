@@ -18,5 +18,4 @@ class @Login
   'it should greet (her|him)': (done) ->
     process.nextTick =>
       @['it should be greeted']()
-      false.should.be.true
       done()
