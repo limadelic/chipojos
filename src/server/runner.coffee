@@ -8,14 +8,14 @@ class @Runner
     @method_matcher = new MethodMatcher
     @result = new Result
 
-  run_steps: (@sut, steps) -> @run_step step for step in steps
+  run_steps: fibrous (@sut, steps) -> @run_step step for step in steps
 
   run_step: (@step) ->
 
     return @result.missing @step unless @is_implemented()?
 
     try
-      if @is_async() then @future.async_call() else @sync_call()
+      if @is_async() then @sync.async_call() else @sync_call()
       @result.passed @step
     catch e
       @result.failed @step, e
