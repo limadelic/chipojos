@@ -10,7 +10,7 @@ root = exports ? @
 root.run = (test) ->
   steps = new Parser().parse test
   sut = new Login
-  new Runner().sync.run_steps sut, steps
+  new Runner().run_steps sut, steps
 
 root.should = require 'should'
 

@@ -8,7 +8,7 @@ class @Runner
     @method_matcher = new MethodMatcher
     @result = new Result
 
-  run_steps: fibrous (@sut, steps) -> @run_step step for step in steps
+  run_steps: (@sut, steps) -> @run_step step for step in steps
 
   run_step: (@step) ->
 
