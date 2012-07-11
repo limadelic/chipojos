@@ -23,7 +23,9 @@ class @Runner
 
   is_async: -> @method.length is @step.args.length + 1
 
-  sync_call: -> @method.apply @sut, @step.args
+  sync_call: -> @call @step.args
 
-  async_call: (done) -> @method.apply @sut, @step.args.concat [done]
+  async_call: (done) -> @call @step.args.concat [done]
+
+  call: (args) -> @method.apply @sut, args
 
