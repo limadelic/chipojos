@@ -15,10 +15,20 @@
     "licenses" : ["MIT"],
     "dependencies": {
         "coffee-script": "latest",
+        "fibrous": "latest",
+        "underscore": "latest",
         "zappa": "latest"
     },
+    "devDependencies": {
+        "jasmine-node": "latest",
+        "should": "latest"
+    },
     "engines": {
-      "node": "0.6.x",
-      "npm": "1.1.x"
+        "node": ">=0.6",
+        "npm": ">=1.1"
+    },
+    "scripts": {
+        "pretest": "coffee -cl -o lib src",
+        "test": "test"
     }
 }

@@ -17,5 +17,4 @@ class @Login
 
   'when .* logs in': -> @['when an user logs in']()
 
-  'it should greet (her|him)': ->
-    @['it should be greeted']()
+  'it should greet (her|him)': -> @['it should be greeted']()
