@@ -7,7 +7,7 @@ describe 'Sentences', ->
 
   '''
 
-  it "doesn't say wuzup" , ->
+  it "doesn't say wuzup", ->
 
     failure = run('''
 

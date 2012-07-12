@@ -11,12 +11,11 @@ class @Login
 
   'when @x logs in': (user) -> @msg = users_msg[user]
 
-  'it should say @x': (msg) -> msg.should.eql @msg
+  'it should say @x': (msg, done) -> process.nextTick =>
+    msg.should.eql @msg
+    done()
 
   'when .* logs in': -> @['when an user logs in']()
 
-  'it should greet (her|him)': (done) ->
-    process.nextTick =>
-      @['it should be greeted']()
-#      false.should.be.true
-      done()
+  'it should greet (her|him)': ->
+    @['it should be greeted']()

@@ -15,7 +15,7 @@ root.run = (test) ->
 root.should = require 'should'
 
 verify_all_passed = (results) ->
-  console.log results
+#  console.log results
   expect(passed).toEqual true for { passed } in results
 
 root.test = (test) ->
