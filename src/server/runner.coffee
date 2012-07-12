@@ -8,13 +8,13 @@ class @Runner
     @result = new Result
 
   run_steps: (@sut, steps) ->
-    @results = []
-    process.on 'uncaughtException', @exception
+    try
+      process.on 'uncaughtException', @exception
 
-    @run_step step for step in steps
+      @run_step step for step in steps
 
-    process.removeListener 'uncaughtException', @exception
-    @results
+    finally
+      process.removeListener 'uncaughtException', @exception
 
   run_step: (@step) ->
 
@@ -28,15 +28,11 @@ class @Runner
     catch e
       @fail e
 
-  missing: -> @record @result.missing @step
-  pass: -> @record @result.passed @step
-  fail: (e) -> @record @result.failed @step, e
+  missing: -> @result.missing @step
+  pass: -> @result.passed @step
+  fail: (e) -> @result.failed @step, e
 
-  record: (result) -> @results.push result
-
-  exception: (e) =>
-    @fail e
-    @done()
+  exception: (e) => @done e
 
   is_implemented: -> @method = @method_matcher.match @sut, @step.name
 

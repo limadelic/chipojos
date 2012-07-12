@@ -9,13 +9,16 @@ describe 'Sentences', ->
 
   it "doesn't say wuzup", ->
 
-    failure = run('''
+    results = run('''
 
       when 'Jim' logs in
       it should say 'wuzup'
 
-    ''')[1]
+    ''')
 
+    expect(results.length).toEqual 2
+
+    failure = results[1]
     expect(failure.passed).toBeFalsy()
     expect(failure.message)
       .toEqual "expected 'wuzup' to equal 'Hello lizard king'"
