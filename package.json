@@ -17,6 +17,7 @@
         "coffee-script": "latest",
         "fibrous": "latest",
         "underscore": "latest",
+        "express": "latest",
         "zappa": "latest"
     },
     "devDependencies": {

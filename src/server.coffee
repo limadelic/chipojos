@@ -10,4 +10,4 @@ zappa = require('zappa').app ->
   @get "/test": -> @render 'test'
 
 
-zappa.app.listen process.env.PORT || 3000
+zappa.app.listen process.env.PORT or 3000
