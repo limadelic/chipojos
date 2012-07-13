@@ -1,8 +1,8 @@
 #require './spec_helper'
 require 'fibrous/lib/jasmine_spec_helper'
 
-{ Parser } = require '../src/server/parsers/parser'
-{ Runner } = require '../src/server/runner'
+{ Parser } = require '../src/engine/parsers/parser'
+{ Runner } = require '../src/engine/runner/runner'
 { Login } = require './fixtures/login'
 
 root = exports ? @
