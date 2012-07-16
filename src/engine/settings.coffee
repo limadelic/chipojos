@@ -5,3 +5,5 @@ global.chipojos = '''
  \\__|_||_|_| .__/\\___// \\___/__/
            |_|      |__/
 '''
+
+global.engine_uri = 'http://localhost:3001'
