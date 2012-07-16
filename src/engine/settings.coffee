@@ -6,4 +6,5 @@ global.chipojos = '''
            |_|      |__/
 '''
 
-global.engine_uri = 'http://localhost:3001'
+global.engine_port = process.env.ENGINE_PORT or 3001
+global.engine_uri = "http://localhost:#{engine_port}"

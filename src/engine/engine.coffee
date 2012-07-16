@@ -1,8 +1,8 @@
-global.engine = require('express').createServer()
+global.express = require 'express'
+global.engine = express.createServer()
 
-require './settings'
-require './root'
+require './config'
 
-engine.listen process.env.ENGINE_PORT or 3001
+engine.listen engine_port
 
 console.log chipojos
