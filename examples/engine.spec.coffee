@@ -9,15 +9,16 @@ describe 'engine', ->
 
     run_uri = engine_uri + '/run'
 
-    test = '''
+    test =
+      name: 'UserLogin'
+      content: '''
 
-      when an user logs in
-      it should be greeted
+        when an user logs in
+        it should be greeted
 
-    '''
+      '''
 
-    http.post(run_uri, data: test).on 'complete', (data, res) ->
-      console.log data
-#      verify_all_passed data
+    http.postJson(run_uri, test).on 'complete', (data, res) ->
+      verify_all_passed data
       done()
 

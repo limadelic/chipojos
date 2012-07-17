@@ -1,3 +1,5 @@
+should = require 'should'
+
 users_msg =
   Jim: 'Hello lizard king'
   Pam: 'Hello turkey murderer'

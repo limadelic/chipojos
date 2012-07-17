@@ -1,4 +1,7 @@
+{ EngineService } = require '../service'
+
 engine.post '/run', (req, res) ->
-  console.log req.body
-  res.send 'cool'
-#    test: 'test', passed: true
+  service = new EngineService
+  test = req.body.content
+
+  res.send service.run test

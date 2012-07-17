@@ -1,11 +1,7 @@
-{ Parser } = require '../../src/engine/parsers/parser'
-{ Runner } = require '../../src/engine/runner/runner'
-{ Login } = require '../fixtures/login'
+{ EngineService } = require '../../src/engine/service'
 
 global.run = (test) ->
-  steps = new Parser().parse test
-  sut = new Login
-  new Runner().run_steps sut, steps
+  new EngineService().run test
 
 global.test = (test) ->
   verify_all_passed run test
