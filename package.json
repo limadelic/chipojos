@@ -17,11 +17,11 @@
         "coffee-script": "latest",
         "fibrous": "latest",
         "underscore": "latest",
-        "express": "latest",
-        "zappa": "latest"
+        "express": "latest"
     },
     "devDependencies": {
         "jasmine-node": "latest",
+        "restler": "latest",
         "should": "latest"
     },
     "engines": {
