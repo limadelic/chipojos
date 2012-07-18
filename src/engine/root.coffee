@@ -1,2 +1,2 @@
 engine.get '/', (req, res) ->
-  res.send "<pre>#{chipojos}</pre>"
+  res.send "<pre>#{settings.chipojos}</pre>"

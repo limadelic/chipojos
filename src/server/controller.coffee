@@ -1,7 +1,11 @@
+http = require 'restler'
+
 app.get "/", (req, res) -> res.render 'home'
 
 app.get "/test", (req, res) -> res.render 'test'
 
 app.post "/test", (req, res) ->
-  console.log req.body.test
-  res.redirect 'back'
+  http.postJson(settings.engine_run, content: req.body.test)
+    .on 'complete', (data, response) ->
+      console.log data
+      res.redirect 'back'

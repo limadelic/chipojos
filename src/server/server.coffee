@@ -3,6 +3,6 @@ global.app = express.createServer()
 
 require './config'
 
-app.listen port
+app.listen settings.port
 
 console.log "Giant Leapin' Lizards!"

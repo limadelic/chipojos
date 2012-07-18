@@ -18,11 +18,11 @@
         "fibrous": "latest",
         "underscore": "latest",
         "jade": "latest",
+        "restler": "latest",
         "express": "latest"
     },
     "devDependencies": {
         "jasmine-node": "latest",
-        "restler": "latest",
         "should": "latest"
     },
     "engines": {

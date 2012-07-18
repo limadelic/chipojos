@@ -1,4 +1,5 @@
-global.port = process.env.PORT or 3000
+require '../settings'
+
 pub = __dirname + '/public'
 views = __dirname + '/views'
 

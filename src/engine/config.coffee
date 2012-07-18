@@ -1,4 +1,4 @@
-require './settings'
+require './../settings'
 
 engine.configure ->
   engine.use express.bodyParser()

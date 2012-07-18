@@ -3,6 +3,6 @@ global.engine = express.createServer()
 
 require './config'
 
-engine.listen engine_port
+engine.listen settings.engine_port
 
-console.log chipojos
+console.log settings.chipojos
