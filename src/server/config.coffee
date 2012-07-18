@@ -1,8 +1,14 @@
 global.port = process.env.PORT or 3000
+pub = __dirname + '/public'
+views = __dirname + '/views'
 
 app.configure ->
-  @use express.static __dirname + '/public'
-  @set 'views', __dirname + '/views'
+  @use @router
+  @use express.static pub
+  @use express.errorHandler()
 
-app.get "/", (req, res) -> res.render 'home.jade'
+  @set 'views', views
+  @set 'view engine', 'jade'
+
+app.get "/", (req, res) -> res.render 'home'
 app.get "/test", (req, res) -> res.render 'test'
