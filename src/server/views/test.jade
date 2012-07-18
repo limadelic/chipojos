@@ -1,9 +1,12 @@
 extends layout
 
 block content
-  .editor
-    textarea(cols=1, rows=20)
 
-  .toolbar
-    a.pull-right.btn.btn-info.btn-large(href='view') view
-    a.pull-right.btn.btn-success.btn-large(href='test') test
+  form(action='/test', method='post')
+    .editor
+      textarea(name='test', cols=1, rows=20)
+
+    .toolbar
+      a.pull-right.btn.btn-info.btn-large(href='view') view
+      a.pull-right.btn.btn-success.btn-large(href='#',
+        onClick="$('form').submit()") test
