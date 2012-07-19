@@ -8,4 +8,4 @@ app.post "/test", (req, res) ->
   http.postJson(settings.engine_run, content: req.body.test)
     .on 'complete', (data, response) ->
       console.log data
-      res.redirect 'back'
+      res.render 'results', results: data

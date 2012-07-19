@@ -5,4 +5,4 @@ require './config'
 
 app.listen settings.port
 
-console.log "Giant Leapin' Lizards!"
+console.log settings.chipojos

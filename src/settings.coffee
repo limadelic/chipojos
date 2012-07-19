@@ -11,5 +11,5 @@ global.settings =
   port: process.env.PORT or 3000
   engine_port: process.env.ENGINE_PORT or 3001
 
-settings.engine_uri = "http://localhost:#{settings.engine_port}"
+settings.engine_uri = 'http://localhost:' + settings.engine_port
 settings.engine_run =  settings.engine_uri + '/run'
