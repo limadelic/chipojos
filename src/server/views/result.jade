@@ -1,4 +1,12 @@
-#result
-  span.badge.badge-success
-    i.icon-ok.icon-white
-  | #{result.step}
+h4#result
+  case result.passed
+    when true
+      span.badge.badge-success
+        i.icon-ok.icon-white
+    when false
+      span.badge.badge-important
+        i.icon-remove.icon-white
+    default
+      span.badge
+        i.icon-pencil.icon-white
+  = result.step
